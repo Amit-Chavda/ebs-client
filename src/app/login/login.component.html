@@ -1,28 +1,45 @@
-<div class="container flex justify-center items-center mx-auto min-h-screen bg-black">
-    <div class="font-dosis tracking-widest"> 
-        <div class=" w-[500px] bg-cyan-900 py-8 text-white rounded-lg">
-            <h1 class="text-5xl font-medium text-center text-white">Login</h1>
+<div class="container flex justify-center items-center mx-auto min-h-screen">
+  <div class="font-dosis tracking-widest">
+    <div class="w-[500px] bg-cyan-900 py-8 text-white rounded-lg">
+      <h1 class="text-5xl font-medium text-center text-white">Login</h1>
 
-            <form class="flex flex-col items-center mt-5 space-y-3 ">
+      <form class="flex flex-col items-center mt-5 space-y-3">
+        <input
+          type="text"
+          class="rounded-xl w-96 text-cyan-900 border-transparent focus:ring-0 focus:border-transparent"
+          placeholder="Username or email"
+        />
 
-                <input type="text" class="border rounded-xl  w-96 text-cyan-900" placeholder="Username or email">
+        <input
+          type="password"
+          class="border-transparent focus:ring-0 focus:border-transparent rounded-xl w-96 text-cyan-900"
+          placeholder="Password"
+        />
 
-                <input type="password" class="border border-cyan-900 rounded-xl focus:outline-none w-96 text-cyan-900"
-                    placeholder="Password">
-
-                <div>
-                    <button
-                        class="w-32 h-10 my-3 text-xl border border-white hover:bg-cyan-800 text-white font-medium rounded-xl">Login</button>
-                </div>
-                <div>
-                    Don't have an account?<a href="/register"
-                        class="hover:font-bold hover:underline underline-offset-4">
-                        Sign up now</a>
-                </div>
-                <a href="/forgot-password" class="hover:font-bold hover:underline underline-offset-4 ">Forgot
-                    Password?</a>
-                <div class="flex items-center gap-2"></div>
-            </form>
+        <div>
+          <button
+            class="w-32 h-10 my-3 text-xl border border-white hover:bg-cyan-800 text-white font-medium rounded-xl"
+          >
+            Login
+          </button>
         </div>
+        <div>
+          Don't have an account?<a
+            routerLink="/register"
+            routerLinkActive="active"
+            class="hover:font-bold hover:underline underline-offset-4"
+          >
+            Sign up now</a
+          >
+        </div>
+        <a
+          routerLink="/forgot-password"
+          routerLinkActive="active"
+          class="hover:font-bold hover:underline underline-offset-4"
+          >Forgot Password?</a
+        >
+        <div class="flex items-center gap-2"></div>
+      </form>
     </div>
+  </div>
 </div>
