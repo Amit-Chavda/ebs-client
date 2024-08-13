@@ -1,56 +1,24 @@
-<div class="grid grid-cols-2 grid-flow-row">
-  <div class="flex flex-col items-center bg-cyan-900/25">
-    <div class="font-dosis mx-10 my-auto space-y-5">
-      <h3 class="text-5xl font-bold">Welcome to E Book Store!</h3>
-      <p class="text-2xl font-medium text-justify">Explore the world of best-selling books that have captivated readers
-        worldwide. From timeless classics to contemporary hits, our collection offers unforgettable stories and
-        characters that will stay with you long after the last page. Discover your next great read today and get lost in
-        the magic of exceptional storytelling.</p>
-    </div>
-  </div>
+<div>
   <div id="carouselExample" class="relative" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-[665px] overflow-hidden bg-cyan-800/40">
+    <div class="relative h-[665px] overflow-hidden">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/8225261-L.jpg" alt="Book One"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
+        <h3 class="text-white text-5xl font-semibold absolute font-dosis left-10 ring-0 bottom-0 top-[500px]">Five Broken Blades: Deluxe Limited Edition</h3>
+        <p class="font-medium text-lg text-white absolute font-dosis left-10 ring-0 bottom-0 top-[560px]">A richly developed world, a captivating ensemble cast, and a twisty, action-packed quest.</p>
+        <button class="h-10 w-32 bg-white font-semibold text-black rounded-lg absolute font-dosis left-10 ring-0 bottom-0 top-[600px] hover:bg-white/20 hover:text-white">Order Now</button>
+        <img src="hero1.png" alt="Book One"
+          class=" h-full w-full mx-auto my-auto object-cover">
       </div>
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/7222246-L.jpg" alt="Book Two"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
+        <img src="hero2.png" alt="Book Two"
+          class=" h-full w-full mx-auto my-auto">
       </div>
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/7222165-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/8225227-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/7222250-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/8233353-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/7222207-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/7222249-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
-      </div>
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="https://covers.openlibrary.org/b/id/8225301-L.jpg" alt="Book Three"
-          class=" h-full w-1/2 mx-auto my-auto object-contain object-top pt-6">
+        <img src="hero3.png" alt="Book Three"
+          class=" h-full w-full mx-auto my-auto">
       </div>
     </div>
     <!-- Slider indicators -->
@@ -64,10 +32,10 @@
     </div>
     <!-- Slider controls -->
     <button type="button"
-      class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      class="absolute top-80 left-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
       data-carousel-prev>
       <span
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none">
         <svg aria-hidden="true" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -76,10 +44,10 @@
       </span>
     </button>
     <button type="button"
-      class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      class="absolute top-80 right-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
       data-carousel-next>
       <span
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none">
         <svg aria-hidden="true" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
