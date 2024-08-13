@@ -1,45 +1,52 @@
 <div class="container flex justify-center items-center mx-auto min-h-screen">
-  <div class="font-dosis tracking-widest">
-    <div class="w-[500px] bg-cyan-900 py-8 text-white rounded-lg">
-      <h1 class="text-5xl font-medium text-center text-white">Login</h1>
-
-      <form class="flex flex-col items-center mt-5 space-y-3">
-        <input
-          type="text"
-          class="rounded-xl w-96 text-cyan-900 border-transparent focus:ring-0 focus:border-transparent"
-          placeholder="Username or email"
-        />
-
-        <input
-          type="password"
-          class="border-transparent focus:ring-0 focus:border-transparent rounded-xl w-96 text-cyan-900"
-          placeholder="Password"
-        />
-
-        <div>
-          <button
-            class="w-32 h-10 my-3 text-xl border border-white hover:bg-cyan-800 text-white font-medium rounded-xl"
-          >
-            Login
-          </button>
+    <div class="font-dosis tracking-widest min-h-[500px]">
+        <!-- Toggle buttons -->
+        <div class="flex justify-between items-center text-center cursor-pointer">
+            <div (click)="isLogin = true" class="border-gray-200 w-[50%] pb-3" [class.border-b]="isLogin"
+                [class.border-orange-500]="isLogin" [class.border-transparent]="!isLogin">
+                <span class="text-center text-2xl font-medium" [class.text-orange-500]="isLogin">Login</span>
+            </div>
+            <div (click)="isLogin = false" class="border-gray-200 w-[50%] pb-3" [class.border-b]="!isLogin"
+                [class.border-orange-500]="!isLogin" [class.border-transparent]="isLogin">
+                <span class="text-center text-2xl font-medium" [class.text-orange-500]="!isLogin">Register</span>
+            </div>
         </div>
-        <div>
-          Don't have an account?<a
-            routerLink="/register"
-            routerLinkActive="active"
-            class="hover:font-bold hover:underline underline-offset-4"
-          >
-            Sign up now</a
-          >
+
+        <!-- Card Content -->
+        <div class="border-t px-8 pt-8 pb-4 text-black rounded-lg shadow-lg shadow-black/25">
+            <!-- Login Form -->
+            <form *ngIf="isLogin" class="flex flex-col mt-5 space-y-3">
+                <label class="text-black text-base">Username or email address <span
+                        class="font-medium text-orange-500">*</span></label>
+                <input type="text"
+                    class="border border-gray-300 rounded-lg w-96 text-black focus:border-black focus:ring-0">
+                <label class="text-black text-base">Password <span class="font-medium text-orange-500">*</span></label>
+                <input type="password"
+                    class="border border-gray-300 rounded-lg focus:outline-none w-96 text-black focus:border-black focus:ring-0">
+                <div class="text-right">
+                    <a href="/forgot-password">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                    <button
+                        class="w-32 h-10 my-3 bg-orange-500 text-xl text-white font-medium rounded-lg">Login</button>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form *ngIf="!isLogin" class="flex flex-col mt-5 space-y-3">
+                <label class="text-black text-base">Username <span class="font-medium text-orange-500">*</span></label>
+                <input type="text" class="border-gray-300 rounded-lg w-96 text-black focus:border-black focus:ring-0">
+                <label class="text-black text-base">Email address <span
+                        class="font-medium text-orange-500">*</span></label>
+                <input type="email" class="border-gray-300 rounded-lg w-96 text-black focus:border-black focus:ring-0">
+                <label class="text-black text-base">Password <span class="font-medium text-orange-500">*</span></label>
+                <input type="password"
+                    class="border-gray-300 rounded-lg focus:outline-none w-96 text-black focus:border-black focus:ring-0">
+                <div class="text-center">
+                    <button
+                        class="w-32 h-10 my-3 bg-orange-500 text-xl text-white font-medium rounded-lg">Register</button>
+                </div>
+            </form>
         </div>
-        <a
-          routerLink="/forgot-password"
-          routerLinkActive="active"
-          class="hover:font-bold hover:underline underline-offset-4"
-          >Forgot Password?</a
-        >
-        <div class="flex items-center gap-2"></div>
-      </form>
     </div>
-  </div>
 </div>
