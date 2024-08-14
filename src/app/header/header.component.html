@@ -1,26 +1,181 @@
-<header>
+<header class="font-dosis">
   <nav class="bg-black/85">
     <div class="flex justify-between items-center">
       <div>
-        <a routerLink="/" routerLinkActive="active"><img src="ebs-logo-svg.png" alt="E Book Store" class="pl-5 py-1 h-16"></a>
+        <a routerLink="/" routerLinkActive="active"><img src="ebs-logo-svg.png" alt="E Book Store"
+            class="pl-5 py-1 h-16"></a>
       </div>
 
       <div class="flex items-center gap-2" *ngIf="currentPath === '/'">
-        <input type="text" class="rounded w-[550px] h-8 p-3 outline-none font-dosis border-transparent focus:ring-0 focus:border-transparent" placeholder="Search book here...">
+        <input type="text"
+          class="rounded w-[550px] h-8 p-3 outline-none font-dosis border-transparent focus:ring-0 focus:border-transparent"
+          placeholder="Search book here...">
         <div>
           <img src="search.png" alt="Search" class="h-8 border border-white rounded p-1">
         </div>
       </div>
       <div>
-        <ul class="flex items-center justify-center text-white gap-10 pr-5 cursor-pointer font-dosis tracking-widest">
+        <ul class="flex items-center justify-center text-white gap-10 pr-5  font-dosis tracking-widest">
           <a routerLink="login" routerLinkActive="active">
             <li class="py-1 px-5 font-semibold rounded hover:bg-white hover:text-black">Login</li>
           </a>
-          <!-- <a routerLink="register" routerLinkActive="active">
-            <li class="py-2 px-5 border border-white rounded hover:bg-w">Sign Up</li>
-          </a> -->
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Navigatoinbar -->
+  <nav class="bg-white  border-b-2 border-gray">
+    <div class="flex h-16 justify-between items-center px-10 tracking-widest">
+
+      <div class="flex pt-1 hover:border-b-4 hover:border-b-orange-500 h-full group">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-fries-menu-32.png" class="w-8">
+          <a routerLink="/author">Books</a>
+        </div>
+
+        <div class="absolute mt-16 text-[16px] shadow-md font-semibold">
+
+          <ul class="hidden group-hover:block main-list w-60 space-y-4 py-4 justify-between">
+
+            <li class="hover:text-orange-500 px-4">Classics</li>
+
+            <div>
+              <li>
+                <div class="flex justify-between hover:text-orange-500 px-4">
+                  Fantasy
+                  <span>></span>
+                </div>
+
+                <div class="sub-list left-60 absolute top-12 w-60 shadow-md">
+                  <ul class="justify-between mx-4 my-4 space-y-4">
+                    <li class=" hover:text-orange-500">Dark Acedemia</li>
+                    <li class=" hover:text-orange-500">Dark Fantasy</li>
+                    <li class=" hover:text-orange-500">Romantacy</li>
+                  </ul>
+                </div>
+              </li>
+            </div>
+
+            <li class="hover:text-orange-500 px-4">Historical</li>
+            <li class="hover:text-orange-500 px-4">Literary Fiction</li>
+
+
+            <li>
+              <div class="flex justify-between hover:text-orange-500 px-4">
+                Mystery & Suspence
+                <span>></span>
+              </div>
+
+              <div class="sub-list left-60 absolute top-40 w-60 shadow-md">
+                <ul class="justify-between mx-4 my-4 space-y-4">
+                  <li class="hover:text-orange-500">Psychological Thrillers</li>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="flex justify-between hover:text-orange-500 px-4">
+                Non-finction
+                <span>></span>
+              </div>
+
+              <div class="sub-list left-60 absolute top-48 w-60 shadow-md">
+                <ul class="justify-between mx-4 my-4 space-y-4">
+                  <li class="hover:text-orange-500">About Giant Companies</li>
+                  <li class="hover:text-orange-500">Entrepreneurial Space</li>
+                  <li class="hover:text-orange-500">Let's Talk Business</li>
+                  <li class="hover:text-orange-500">Supercharge Productivity</li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex justify-between hover:text-orange-500 px-4">
+                Romance
+                <span>></span>
+              </div>
+
+              <div class="sub-list hidden left-60 absolute top-64 w-60 shadow-md">
+                <ul class="justify-between mx-4 my-4 space-y-4">
+                  <li class="hover:text-orange-500">Contemporary Romance</li>
+                  <li class="hover:text-orange-500">Historical Romance</li>
+                  <li class="hover:text-orange-500">Romantic Suspense</li>
+                  <li class="hover:text-orange-500">Paranormal Romance</li>
+                  <li class="hover:text-orange-500">Romantic Comedy</li>
+                  <li class="hover:text-orange-500">Regency Romance</li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="flex justify-between hover:text-orange-500 px-4">
+                Science & Fiction
+                <span>></span>
+              </div>
+
+              <div class="sub-list hidden left-60 absolute top-72 w-60 shadow-md">
+                <ul class="justify-between mx-4 my-4 space-y-4">
+                  <li class="hover:text-orange-500">Cyberpunk</li>
+                  <li class="hover:text-orange-500">Space Opera</li>
+                  <li class="hover:text-orange-500">Time Travel</li>
+                  <li class="hover:text-orange-500">Alien Invasions</li>
+                  <li class="hover:text-orange-500">Post-Apocalyptic</li>
+                  <li class="hover:text-orange-500">Dystopian</li>
+                  <li class="hover:text-orange-500">Tech Noir</li>
+                  <li class="hover:text-orange-500">Biopunk</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="hover:text-orange-500 px-4">Special Books</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-open-box-32.png" class="w-6">
+          <a routerLink="/" routerLinkActive="active">Bookish Box</a>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-open-box-32.png" class="w-6">
+          <a routerLink="/category">Mystery Box</a>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-category-32.png" class="w-6">
+          <a routerLink="/contact">Categories</a>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-book-stack-32.png" class="w-6">
+          <a routerLink="/about">Collections</a>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-book-stack-32 (2).png" class="w-6">
+          <a routerLink="/cart">Bundles</a>
+        </div>
+      </div>
+
+      <div class="flex pt-1.5 hover:border-b-4 hover:border-b-orange-500 h-full">
+        <div class="flex gap-2 items-center h-16 font-semibold ">
+          <img src="header-icons/icons8-gift-card-32.png" class="w-6">
+          <a routerLink="/favorites">Gift Cards</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
 </header>
