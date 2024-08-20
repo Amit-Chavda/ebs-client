@@ -1,27 +1,14 @@
 <div>
   <div id="carouselExample" class="relative" data-carousel="slide">
-    <!-- Carousel wrapper -->
     <div class="relative h-[665px] overflow-hidden">
-      <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <h3 class="text-white text-5xl font-semibold absolute font-dosis left-10 ring-0 bottom-0 top-[500px]">Five Broken Blades: Deluxe Limited Edition</h3>
-        <p class="font-medium text-lg text-white absolute font-dosis left-10 ring-0 bottom-0 top-[560px]">A richly developed world, a captivating ensemble cast, and a twisty, action-packed quest.</p>
-        <button class="h-10 w-32 bg-white font-semibold text-black rounded-lg absolute font-dosis left-10 ring-0 bottom-0 top-[600px] hover:bg-white/20 hover:text-white">Order Now</button>
-        <img src="hero1.png" alt="Book One"
+      <div *ngFor="let item of carouselItem; let i = index" class="hidden duration-700 ease-in-out" data-carousel-item [class.hidden]="i !== 0" [attr.data-carousel-item]="i">
+        <h3 class="text-white text-5xl font-semibold absolute font-dosis left-10 ring-0 bottom-0 top-[500px]">{{ item.title }}</h3>
+        <p class="font-medium text-lg text-white absolute font-dosis left-10 ring-0 bottom-0 top-[560px]">{{ item.description }}</p>
+        <a routerLink="{{ item.redirectUrl }}" routerLinkActive="active"><button class="h-10 w-32 bg-white font-semibold text-black rounded-lg absolute font-dosis left-10 ring-0 bottom-0 top-[600px] hover:bg-white/20 hover:text-white">Order Now</button></a>
+        <img src="{{ item.imageUrl }}" alt="Book"
           class=" h-full w-full mx-auto my-auto object-cover">
       </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="hero2.png" alt="Book Two"
-          class=" h-full w-full mx-auto my-auto">
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="hero3.png" alt="Book Three"
-          class=" h-full w-full mx-auto my-auto">
-      </div>
     </div>
-    <!-- Slider indicators -->
     <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
       <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
         data-carousel-slide-to="0"></button>
@@ -30,7 +17,6 @@
       <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
         data-carousel-slide-to="2"></button>
     </div>
-    <!-- Slider controls -->
     <button type="button"
       class="absolute top-80 left-0 z-30 flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
       data-carousel-prev>
