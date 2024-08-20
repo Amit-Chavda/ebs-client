@@ -1,0 +1,94 @@
+<form class="flex w-full h-[1200px] px-52 justify-center items-center font-dosis tracking-wide font-light">
+
+    <div>
+        <div class="text-5xl font-semibold text-center mt-20    ">Account details</div>
+        <div class="mt-12">
+            <label class="text-black text-base font-semibold">First Name <span
+                    class="font-medium text-orange-500">*</span></label>
+            <input type="text"
+                class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-4">
+        </div>
+
+        <div>
+            <label class="text-black text-base font-semibold">Last Name <span
+                    class="font-medium text-orange-500">*</span></label>
+            <input type="text"
+                class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-4">
+        </div>
+
+        <div>
+            <label class="text-black text-base font-semibold">Display Name <span
+                    class="font-medium text-orange-500">*</span></label>
+            <input type="text"
+                class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-1">
+            <span class="italic">This will be how your name will be displayed in the account section and in
+                reviews</span>
+        </div>
+
+        <div class="mt-4">
+            <label class="text-black text-base font-semibold">Email address<span
+                    class="font-medium text-orange-500">*</span></label>
+            <input type="text"
+                class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-4">
+        </div>
+
+        <fieldset class="border-2 px-4 py-4 rounded-md">
+            <legend class="px-1">Password change</legend>
+
+            <div>
+                <label class="text-black text-base font-semibold">Current password (leave blank to leave unchanged)
+                    <span class="font-medium text-orange-500">*</span></label>
+                <input type="password"
+                    class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-4">
+            </div>
+
+            <div>
+                <label class="text-black text-base font-semibold">New password (leave blank to leave unchanged) <span
+                        class="font-medium text-orange-500">*</span></label>
+                <input type="password"
+                    class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-4">
+            </div>
+
+            <div>
+                <label class="text-black text-base font-semibold">Confirm new password <span
+                        class="font-medium text-orange-500">*</span></label>
+                <input type="password"
+                    class="border border-gray-300 rounded-lg w-full text-black focus:border-black focus:ring-0 mt-2 mb-1">
+            </div>
+
+        </fieldset>
+
+        <div class="flex flex-col mt-5">
+            <label class="text-black text-base font-semibold">Default Currency <span
+                    class="font-medium text-orange-500">*</span></label>
+            <select
+                class="border rounded-lg w-full text-black border-gray-300 focus:border-gray-300 focus:ring-0 mt-2 mb-1">
+
+                <option *ngFor="let currency of currencies" [value]="currency.value">
+                    {{ currency.label }}
+                </option>
+            </select>
+            <span class="italic">Select your preferred currency for shopping and payments. </span>
+        </div>
+
+        <div class="flex flex-col space-y-4 text-lg mt-4">
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="newsletter" value="subscribe"
+                    class="form-radio h-6 w-6 text-orange-500 focus:ring-orange-500" />
+                <span>Subscribe to our newsletter</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="newsletter" value="unsubscribe"
+                    class="form-radio h-6 w-6 text-orange-500 focus:ring-orange-500" />
+                <span>Unsubscribe from our newsletter</span>
+            </label>
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="newsletter" value="order-updates"
+                    class="form-radio h-6 w-6 text-orange-500 focus:ring-orange-500" />
+                <span>Receive Order Updates</span>
+            </label>
+        </div>
+
+        <button class="w-40 h-11 my-3 bg-orange-500 text-lg text-white rounded-md mt-4">Save changes</button>
+    </div>
+</form>
