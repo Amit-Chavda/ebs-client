@@ -1,5 +1,6 @@
 .sub-list {
     display: none;
+    background-color: white;
 }
 
 .group:hover .main-list {
