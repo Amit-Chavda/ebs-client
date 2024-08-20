@@ -1,135 +1,84 @@
 <div class="min-h-screen flex flex-col">
   <!-- Top Bar -->
-  <div
-    class="w-full h-40 p-4 bg-white-300 text-black text-center text-2xl font-bold font-dosis tracking-widest"
-  >
+  <div class="w-full h-40 p-4 bg-white-300 text-black text-center text-2xl font-bold font-dosis tracking-widest">
     <span class="text-center text-5xl font-medium">My Account</span>
   </div>
 
   <!-- Main Content -->
   <div class="flex flex-grow pb-20 min-h-[500px]">
     <!-- Sidebar -->
-    <div
-      class="flex flex-col w-1/4 p-4 bg-white-100 pl-12 pr-12 font-dosis text-base tracking-wide"
-    >
+    <div class="flex flex-col w-1/4 p-4 bg-white-100 pl-12 pr-12 font-dosis text-base tracking-wide">
       <!-- Dashboard -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-        [ngClass]="{
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded" [ngClass]="{
           'bg-orange-500 text-white':
             selectedComponent === components['dashboard'],
           'bg-white text-black hover:bg-gray-300':
             selectedComponent !== components['dashboard']
-        }"
-        (click)="loadComponent('dashboard')"
-      >
-        <img
-          [src]="
+        }" (click)="loadComponent('dashboard')">
+
+        <img [src]="
             selectedComponent === components['dashboard']
-              ? 'dashboard-white.png'
-              : 'dashboard-black.png'
-          "
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+              ? '/account-items/dashboard-white.png'
+              : '/account-items/dashboard-black.png'
+          " alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Dashboard
       </button>
       <!-- Order -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-        [ngClass]="{
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded" [ngClass]="{
           'bg-orange-500 text-white': selectedComponent === components['order'],
           'bg-white text-black hover:bg-gray-300':
             selectedComponent !== components['order']
-        }"
-        (click)="loadComponent('order')"
-      >
-        <img
-          [src]="
+        }" (click)="loadComponent('order')">
+        <img [src]="
             selectedComponent === components['order']
-              ? 'basket-white.png'
-              : 'basket-black.png'
-          "
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+              ? '/account-items/basket-white.png'
+              : '/account-items/basket-black.png'
+          " alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Order
       </button>
       <!-- Downloads -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="download-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/download-black.png" alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Downloads
       </button>
       <!-- Gift Cards -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="gift-card-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/gift-card-black.png" alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Gift Cards
       </button>
       <!-- Addresses -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="location-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/location-black.png" alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Addresses
       </button>
       <!-- Wishlist -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="wishlist-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/wishlist-black.png" alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Wishlist
       </button>
       <!-- Payment Methods -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="payment-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/payment-black.png" alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Payment Methods
       </button>
       <!--  Account Details -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="user-black.png"
-          alt="Dashboard Icon"
-          class="w-5 h-5 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded" [ngClass]="{
+        'bg-orange-500 text-white':
+          selectedComponent === components['accountDetails'],
+        'bg-white text-black hover:bg-gray-300':
+          selectedComponent !== components['accountDetails']
+      }" (click)="loadComponent('accountDetails')">
+
+        <img [src]="
+          selectedComponent === components['accountDetails']
+            ? '/account-items/user-white.png'
+            : '/account-items/user-black.png'
+        " alt="Dashboard Icon" class="w-5 h-5 mr-2 mb-1 inline-block" />
         Account Details
       </button>
       <!-- Log Out -->
-      <button
-        class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded"
-      >
-        <img
-          src="log-out-black.png"
-          alt="Dashboard Icon"
-          class="w-4 h-4 mr-2 mb-1 inline-block"
-        />
+      <button class="text-left pr p-1.5 bg-white-500 text-black hover:bg-gray-300 rounded">
+        <img src="/account-items/log-out-black.png" alt="Dashboard Icon" class="w-4 h-4 mr-2 mb-1 inline-block" />
         Log Out
       </button>
     </div>
@@ -138,10 +87,8 @@
     <div class="border-r border-gray- mb-5"></div>
 
     <!-- Content Area -->
-    <div class="w-3/4 p-6">
-      <h2 class="text-2xl font-semibold mb-4">Content Title</h2>
-      <p class="text-gray-700"></p>
-      <!-- <ng-container appDynamicHost></ng-container> -->
+    <div class="w-3/4">
+      <p></p>
       <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
     </div>
   </div>

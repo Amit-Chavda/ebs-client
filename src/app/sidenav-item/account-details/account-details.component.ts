@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'account-details',
+  selector: ' account-details',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './account-details.component.html',

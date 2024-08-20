@@ -1,8 +1,8 @@
 import { Component, NgModule, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { DynamicHostDirective } from './src/directives/dynamic-host.directive';
 import { DashboardComponent } from '../sidenav-item/dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { OrderComponent } from '../sidenav-item/order/order.component';
+import { AccountDetailsComponent } from '../sidenav-item/account-details/account-details.component';
 
 @Component({
   selector: 'app-account',
@@ -11,11 +11,11 @@ import { OrderComponent } from '../sidenav-item/order/order.component';
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })
-export class AccountComponent implements OnInit{
+export class AccountComponent implements OnInit {
   components: any = {
     dashboard: DashboardComponent,
-    order: OrderComponent
-    // Add other components here
+    order: OrderComponent,
+    accountDetails: AccountDetailsComponent
   };
 
   selectedComponent: any = null;
