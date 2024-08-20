@@ -1,0 +1,11 @@
+.sub-list {
+    display: none;
+}
+
+.group:hover .main-list {
+    display: block;
+}
+
+.main-list li:hover .sub-list {
+    display: block;
+}
