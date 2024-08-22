@@ -1,0 +1,157 @@
+<div>
+  <p class="tracking-wide text-base font-bold pb-5">Your Balance</p>
+  <span class="text-4xl tracking-wide font-thin text-gray-700">
+    &#8377;0.00
+  </span>
+
+  <p class="text-2xl tracking-wide font-semibold pt-4 pb-5">Add a gift card?</p>
+
+  <form>
+    <input
+      type="text"
+      placeholder="Enter Code"
+      class="border rounded-lg text-black border-gray-300 focus:border-black focus:ring-0 pl-2 w-[40%] py-2 tracking-wide text-base"
+    />
+    <button
+      class="border rounded-md bg-orange-500 text-white py-2 px-5 font-medium tracking-wide text-base ml-2"
+    >
+      Add To Your Account
+    </button>
+  </form>
+
+  <!-- Active Gift Cards -->
+  <p class="tracking-wider text-base font-bold py-4">Active Gift Cards</p>
+
+  <div class="relative overflow-hidden h-40">
+    <div class="scroll-hidden h-full">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead class="sticky top-0 bg-neutral-300">
+          <tr>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Date
+            </th>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Code
+            </th>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Available Balance
+            </th>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Expires
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          id="tableBody"
+          *ngIf="haveData"
+          class="overflow-auto tracking-wide text-base"
+        >
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">Admin</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">Admin</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">Admin</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">Admin</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">Admin</td>
+          </tr>
+        </tbody>
+        <div *ngIf="!haveData" class="py-3 pl-3 tracking-wide text-base">
+          <span> You have no active gift cards at the moment </span>
+        </div>
+      </table>
+    </div>
+  </div>
+
+  <!-- Activity -->
+  <p class="tracking-wider text-base font-bold py-4">Activity</p>
+
+  <div class="relative overflow-hidden h-40">
+    <div class="scroll-hidden h-full">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead class="sticky top-0 bg-neutral-300">
+          <tr>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Date
+            </th>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Description
+            </th>
+            <th
+              class="py-2 px-6 border-b text-black text-left text-base font-semibold"
+            >
+              Amount
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          id="tableBody"
+          *ngIf="haveData"
+          class="overflow-auto tracking-wide text-base"
+        >
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">john doe</td>
+            <td class="py-2 px-6">john doe</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+          </tr>
+          <tr class="border-b border-gray-200">
+            <td class="py-2 px-6">1</td>
+            <td class="py-2 px-6">John Doe</td>
+            <td class="py-2 px-6">john doe</td>
+          </tr>
+        </tbody>
+        <div *ngIf="!haveData" class="py-3 pl-3 tracking-wide text-base">
+          <span> No activity recorded just yet </span>
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
