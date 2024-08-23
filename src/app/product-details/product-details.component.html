@@ -1,0 +1,149 @@
+<div class="flex flex-col font-dosis tracking-wider p-10">
+    <div class="flex">
+        <p>Home / Mystery
+            <span class="text-gray-500">/ {{product.title}}</span>
+        </p>
+    </div>
+
+    <div class="flex justify-around mt-5">
+        <div class="flex w-full justify-center items-center">
+
+            <div class="flex w-[492px] h-[492px] items-center justify-center">
+                <div class="flex w-80">
+                    <img src="{{product.imageUrl}}"
+                        alt="And Then There Were None (The World's Favourite Agatha Christie Book)" class="rounded-xl">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full p-12">
+            <h2 class="text-2xl">
+                {{product.title}}
+            </h2>
+            <div class="flex text-2xl mt-8">
+                <p class="line-through text-gray-400">{{product.currencySign}}{{ product.price.original |
+                    number:'1.2-2' }}</p>
+                <p class="font-semibold ml-4">{{product.currencySign}}{{ product.price.current | number:'1.2-2' }}</p>
+            </div>
+            <button
+                class="flex w-56 mt-8 justify-center items-center bg-orange-500 h-16 rounded-lg text-white text-xl font-semibold hover:bg-black transition-colors duration-500">
+                Add To Cart
+            </button>
+
+            <div class="flex mt-8 rounded-lg p-5 w-fit" style="background-color: rgba(48, 245, 40, 0.15);">
+
+                <img src="icons8-box-48.png" alt="Box Icon" class="w-8 h-8 mr-5">
+
+                <div>
+                    <p class="text-[#43B40D] font-semibold">{{product.availability}}</p>
+                    <p class="font-light">{{product.shipping_info}}</p>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <p>Category: {{ product.category}}</p>
+                <p>SKU: <span class="font-semibold">{{product.sku}}</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-10 font-semibold text-xl">
+        <p>Additional Information</p>
+    </div>
+
+    <div class="flex flex-wrap  p-5 gap-y-10">
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/edition.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Edition</p>
+                    <p>{{ product.additional_information.edition }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/icons8-pages-48.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Pages</p>
+                    <p>{{ product.additional_information.pages }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/icons8-open-book-48.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Author Name</p>
+                    <p>{{ product.additional_information.author }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/language.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Language</p>
+                    <p>{{ product.additional_information.language }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/icons8-hashtag-sign-48.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>ISBN</p>
+                    <p>{{ product.additional_information.isbn }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/icons8-building-48.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Publication</p>
+                    <p>{{ product.additional_information.publication }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/icons8-calendar-48.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Publication Year</p>
+                    <p>{{ product.additional_information.publication_year }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-none w-1/4 p-2">
+            <div class="flex items-center">
+                <img src="product-page-icons/page-size.png" alt="Book Icon" class="w-14 h-14 mr-4">
+                <div>
+                    <p>Specs</p>
+                    <p>{{ product.additional_information.specs }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-10 px-10">
+        <button class="bg-black text-white text-lg py-3 px-8 rounded-full shadow-sm">Description</button>
+        <button
+            class="bg-white border-2 ml-5 text-lg py-3 px-8 rounded-full shadow-sm hover:bg-black hover:text-white">Reviews
+            ({{product.reviews.length}})</button>
+    </div>
+
+    <div class="px-10 text-lg text-justify leading-8 my-6">
+        <p *ngFor="let desc of product.description.split('\n\n') " class="mt-6">
+            {{ desc }}
+        </p>
+    </div>
+    <app-book-carousel title="Related Products" showAddToCartBtn='true' class="mt-10"></app-book-carousel>
+</div>

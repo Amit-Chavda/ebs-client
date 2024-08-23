@@ -1,0 +1,181 @@
+<div class="flex flex-col font-dosis tracking-wider">
+
+    <div class="flex p-5 px-10 text-lg">
+        <p>Home <span class="text-gray-500">/ Fantasy</span></p>
+    </div>
+
+    <div class="flex text-5xl justify-center my-10 font-bold tracking-wider">
+        <h5>Fantasy</h5>
+    </div>
+
+    <div>
+
+    </div>
+    <div class="grid grid-cols-12 ">
+        <div class="col-span-3 ">
+
+            <form class="flex flex-col">
+
+                <!-- Categories Checkboxes -->
+                <div class="flex flex-col p-5 px-12">
+
+                    <div class="flex text-xl font-semibold tracking-wider">
+                        <h3>Categories:</h3>
+                    </div>
+
+                    <div class="flex">
+                        <ul class="mt-5 text-lg">
+                            <li *ngFor="let category of categories" class="flex gap-2 mt-2 items-center">
+                                <label>{{category.name }}
+                                    <span class="text-gray-500">({{category.quantity}})</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col p-5 px-12">
+
+                    <div class="flex text-xl font-semibold tracking-wider">
+                        <h3>Edition</h3>
+                    </div>
+
+                    <div class="flex">
+                        <ul class="mt-5 text-lg">
+                            <li *ngFor="let edition of editionList" class="flex px-2 gap-2 mt-2 items-center">
+                                <input type="checkbox" id="{{edition.edition}} ({{edition.quantity}})"
+                                    class="form-checkbox h-5 w-5 text-orange-500 border-gray-400 rounded-md focus:ring-0 focus:ring-transparent focus:outline-none">
+                                <label for="{{edition.edition}} ({{edition.quantity}})">{{edition.edition }}
+                                    <span class="text-gray-500">({{edition.quantity}})</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col p-5 px-12">
+
+                    <div class="flex text-xl font-semibold tracking-wider">
+                        <h3>Publisher</h3>
+                    </div>
+
+                    <div class="flex">
+                        <ul class="mt-5 w-80 max-w-96 max-h-96 overflow-y-auto text-lg scrollable-list">
+                            <li *ngFor="let publisher of publisherList" class="flex px-2 gap-2 mt-2 items-center">
+                                <input type="checkbox" id="{{publisher.publisher}} ({{publisher.quantity}})"
+                                    class="form-checkbox h-5 w-5 text-orange-500 border-gray-400 rounded-md focus:ring-0 focus:ring-transparent focus:outline-none">
+                                <label for="{{publisher.publisher}} ({{publisher.quantity}})">{{publisher.publisher }}
+                                    <span class="text-gray-500">({{publisher.quantity}})</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col p-5 px-12">
+
+                    <div class="flex text-xl font-semibold tracking-wider">
+                        <h3>Stock status</h3>
+                    </div>
+
+                    <div class="flex">
+                        <ul class="mt-5 text-lg">
+                            <li class="flex px-2 gap-2 mt-2 items-center">
+                                <input type="radio" id="In stock"
+                                    class="h-5 w-5 text-orange-500 border-gray-400 rounded-xl focus:ring-0 focus:ring-transparent focus:outline-none"
+                                    name="stockStatus">
+                                <label for="In stock">In stock</label>
+                            </li>
+                            <li class="flex px-2 gap-2 mt-2 items-center">
+                                <input type="radio" id="Out of stock"
+                                    class="h-5 w-5 text-orange-500 border-gray-400 rounded-xl focus:ring-0 focus:ring-transparent focus:outline-none"
+                                    name="stockStatus">
+                                <label for="Out of stock">Out of stock</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex flex-col p-5 px-12">
+
+                    <div class="flex text-xl font-semibold tracking-wider">
+                        <h3>Price</h3>
+                    </div>
+
+                    <div class="flex">
+                        <ul class="mt-5 w-80 max-w-96 max-h-96 overflow-y-auto text-lg scrollable-list">
+                            <li *ngFor="let price of priceFilter" class="flex px-2 gap-2 mt-2 items-center">
+                                <input type="radio" id="price-{{price.min}}-{{price.max}}" name="priceFilter"
+                                    value="{{price.min}}-{{price.max}}"
+                                    class="h-5 w-5 text-orange-500 border-gray-400 rounded-xl focus:ring-0 focus:ring-transparent focus:outline-none">
+
+                                <label for="price-{{price.min}}-{{price.max}}" class="cursor-pointer">
+                                    {{price.label}}
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </form>
+
+        </div>
+
+        <div class="col-span-9">
+
+            <div class="grid grid-cols-2 px-8">
+                <p class="flex items-center">
+                    Showing all {{ 100 }} results
+                </p>
+                <select
+                    class="border rounded-lg w-64 text-black border-gray-300 focus:border-gray-300 focus:ring-0 ml-auto">
+                    <option *ngFor="let sortingCategory of sortingCategories" [value]="sortingCategory">
+                        {{ sortingCategory }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="flex max-h-[95%] overflow-y-auto scrollable-list">
+                <div class="flex flex-wrap gap-7 ml-10">
+
+                    <div *ngFor="let book of books" class="w-60 mt-2">
+
+                        <a routerLink="/product-details" routerLinkActive="active">
+                            <div class="w-[250px] h-[450px]">
+                                <img [src]="book.imageUrl" [alt]="book.title" class="w-full rounded-2xl h-full">
+                            </div>
+
+                            <div class="hover:text-orange-500 transition-colors duration-500">
+                                <div class="py-1 px-2 line-clamp-2 overflow-hidden h-14">
+                                    <p class="text-lg font-semibold">{{ book.title }}</p>
+                                </div>
+                                <div class="flex text-lg">
+                                    <p class="px-2 line-through text-gray-400">$ {{ book.actualPrice | number:'1.2-2' }}
+                                    </p>
+                                    <p class="font-semibold">$ {{ book.offeredPrice | number:'1.2-2' }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <button
+                            class="flex w-full justify-center items-center bg-orange-500 h-14 rounded-lg mt-2 text-white text-lg hover:bg-black transition-colors duration-500">
+                            Add To Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row justify-center gap-4 my-10 mb-32">
+                <button
+                    class="bg-orange-500 text-white rounded-full text-xl w-12 h-12 hover:bg-gray-300 hover:text-black">1</button>
+                <button class="rounded-full text-xl w-12 h-12 hover:bg-gray-300">2</button>
+                <button class="rounded-full text-xl w-12 h-12 hover:bg-gray-300">3</button>
+                <button class="rounded-full text-xl w-12 h-12 hover:bg-gray-300">...</button>
+                <button class="rounded-full text-xl w-12 h-12 hover:bg-gray-300">20</button>
+                <button class="flex rounded-full text-xl w-12 h-12 hover:bg-gray-300 justify-center items-center">
+                    <img src="icons8-right-50.png" alt="arrow icon" class="flex h-8 w-8">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
