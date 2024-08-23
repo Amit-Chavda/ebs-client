@@ -1,0 +1,22 @@
+<div>
+  <div *ngIf="!showBillingForm" class="text-base tracking-wide">
+    <p class="pb-3 font-medium">
+      The following addresses will be used on the checkout page by default.
+    </p>
+    <div class="flex flex-row justify-between mb-4">
+      <h3 class="text-3xl font-bold">Billing Addresses</h3>
+      <button
+        (click)="loadComponent()"
+        class="px-3 border border-1 rounded-md hover:shadow shadow-slate-400"
+      >
+        Add Billing Address
+      </button>
+    </div>
+    <p class="italic">You have not set up this type of address yet.</p>
+  </div>
+
+  <div *ngIf="showBillingForm">
+    <h3 class="text-3xl font-bold mb-4">Billing Address</h3>
+    <ng-container *ngComponentOutlet="billingComponent"></ng-container>
+  </div>
+</div>
