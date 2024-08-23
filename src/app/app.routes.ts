@@ -13,13 +13,16 @@ import { GiftCardsComponent } from './account/sidenav-item/gift-cards/gift-cards
 import { BillingAddressFormComponent } from './account/sidenav-item/billing-address-form/billing-address-form.component';
 import { LogoutComponent } from './account/sidenav-item/logout/logout.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ViewCategoryComponent } from './homepage/components/view-category/view-category.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', component: HomepageComponent },
-  { path: 'account', component: AccountComponent, 
-    children: [  
+  {
+    path: 'account', component: AccountComponent,
+    children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'orders', component: OrderComponent },
       { path: 'accountDetails', component: AccountDetailsComponent },
@@ -28,7 +31,11 @@ export const routes: Routes = [
       { path: 'addresses', component: AddressesComponent },
       { path: 'billingAddress', component: BillingAddressFormComponent },
       { path: 'giftCards', component: GiftCardsComponent },
-      { path: 'logout', component: LogoutComponent } 
-    ] },
-    { path: 'wishlist', component: WishlistComponent }
+      { path: 'logout', component: LogoutComponent }
+    ]
+  },
+  { path: 'wishlist', component: WishlistComponent },
+  { path: 'account', component: AccountComponent },
+  { path: 'category', component: ViewCategoryComponent },
+  { path: 'product-details', component: ProductDetailsComponent }
 ];
